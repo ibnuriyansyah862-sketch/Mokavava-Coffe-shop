@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mokavava — Coffee House</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">☕</span>
+      <span class="logo-text">Mokavava</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="order-btn">Order Now</button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Welcome to</p>
+      <h1 class="hero-title">Mokavava</h1>
+      <p class="hero-tagline">Where every sip tells a story</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="about-img-box">
+            <div class="about-img-inner">
+              <div class="coffee-art">
+                <div class="cup">☕</div>
+                <div class="steam">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-badge">
+            <span class="badge-num">10+</span>
+            <span class="badge-text">Years of<br/>Excellence</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">A Cup Born from Passion</h2>
+          <p class="about-desc">Mokavava was born in a small corner of the city, where the love for perfectly crafted coffee meets a cozy, welcoming atmosphere. We source our beans from the finest farms in Ethiopia, Colombia, and Brazil.</p>
+          <p class="about-desc">Every cup is crafted with intention — from the carefully measured grind to the precise pour, we believe coffee is an art form worth perfecting.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Coffee Blends</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5K+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Locations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <p class="section-label center">Our Offerings</p>
+      <h2 class="section-title center">Crafted with Love</h2>
+      <p class="section-desc center">From bold espressos to creamy lattes — explore our handpicked selection of drinks and bites.</p>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="hot">Hot Drinks</button>
+        <button class="tab" data-filter="cold">Cold Drinks</button>
+        <button class="tab" data-filter="food">Food</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+
+        <!-- Hot Drinks -->
+        <div class="product-card" data-category="hot">
+          <div class="card-badge">Best Seller</div>
+          <div class="card-emoji">☕</div>
+          <div class="card-body">
+            <h3>Classic Espresso</h3>
+            <p>Intense, rich, and beautifully balanced. Pure coffee in its finest form.</p>
+            <div class="card-footer">
+              <span class="price">$3.50</span>
+              <button class="add-btn" onclick="addToCart(this, 'Classic Espresso', 3.50)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="hot">
+          <div class="card-emoji">🍵</div>
+          <div class="card-body">
+            <h3>Caramel Latte</h3>
+            <p>Smooth espresso with steamed milk and a drizzle of golden caramel.</p>
+            <div class="card-footer">
+              <span class="price">$5.00</span>
+              <button class="add-btn" onclick="addToCart(this, 'Caramel Latte', 5.00)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="hot">
+          <div class="card-badge">New</div>
+          <div class="card-emoji">🫗</div>
+          <div class="card-body">
+            <h3>Hazelnut Cappuccino</h3>
+            <p>Velvety foam with espresso and toasted hazelnut syrup.</p>
+            <div class="card-footer">
+              <span class="price">$5.50</span>
+              <button class="add-btn" onclick="addToCart(this, 'Hazelnut Cappuccino', 5.50)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="hot">
+          <div class="card-emoji">🍫</div>
+          <div class="card-body">
+            <h3>Mocha Supreme</h3>
+            <p>Espresso meets rich dark chocolate for a decadent treat.</p>
+            <div class="card-footer">
+              <span class="price">$5.75</span>
+              <button class="add-btn" onclick="addToCart(this, 'Mocha Supreme', 5.75)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cold Drinks -->
+        <div class="product-card" data-category="cold">
+          <div class="card-badge">Popular</div>
+          <div class="card-emoji">🧋</div>
+          <div class="card-body">
+            <h3>Iced Brown Sugar Latte</h3>
+            <p>Cold espresso with brown sugar syrup and oat milk over ice.</p>
+            <div class="card-footer">
+              <span class="price">$6.00</span>
+              <button class="add-btn" onclick="addToCart(this, 'Iced Brown Sugar Latte', 6.00)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="cold">
+          <div class="card-emoji">🥤</div>
+          <div class="card-body">
+            <h3>Cold Brew</h3>
+            <p>Slow-steeped 20 hours for a smooth, low-acidity coffee experience.</p>
+            <div class="card-footer">
+              <span class="price">$5.50</span>
+              <button class="add-btn" onclick="addToCart(this, 'Cold Brew', 5.50)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="cold">
+          <div class="card-badge">New</div>
+          <div class="card-emoji">🍦</div>
+          <div class="card-body">
+            <h3>Affogato Float</h3>
+            <p>Vanilla ice cream drowned in hot espresso. Pure indulgence.</p>
+            <div class="card-footer">
+              <span class="price">$7.00</span>
+              <button class="add-btn" onclick="addToCart(this, 'Affogato Float', 7.00)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="cold">
+          <div class="card-emoji">🍵</div>
+          <div class="card-body">
+            <h3>Matcha Cold Latte</h3>
+            <p>Japanese ceremonial matcha blended with coconut milk and honey.</p>
+            <div class="card-footer">
+              <span class="price">$6.50</span>
+              <button class="add-btn" onclick="addToCart(this, 'Matcha Cold Latte', 6.50)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food -->
+        <div class="product-card" data-category="food">
+          <div class="card-badge">Chef's Pick</div>
+          <div class="card-emoji">🥐</div>
+          <div class="card-body">
+            <h3>Butter Croissant</h3>
+            <p>Flaky, golden layers baked fresh every morning. A classic done right.</p>
+            <div class="card-footer">
+              <span class="price">$3.75</span>
+              <button class="add-btn" onclick="addToCart(this, 'Butter Croissant', 3.75)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="food">
+          <div class="card-emoji">🍰</div>
+          <div class="card-body">
+            <h3>Coffee Cheesecake</h3>
+            <p>Creamy espresso-infused cheesecake on a graham cracker crust.</p>
+            <div class="card-footer">
+              <span class="price">$6.50</span>
+              <button class="add-btn" onclick="addToCart(this, 'Coffee Cheesecake', 6.50)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="food">
+          <div class="card-emoji">🥪</div>
+          <div class="card-body">
+            <h3>Avocado Toast</h3>
+            <p>Sourdough with smashed avocado, poached egg, and chili flakes.</p>
+            <div class="card-footer">
+              <span class="price">$8.50</span>
+              <button class="add-btn" onclick="addToCart(this, 'Avocado Toast', 8.50)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="food">
+          <div class="card-badge">Popular</div>
+          <div class="card-emoji">🍩</div>
+          <div class="card-body">
+            <h3>Glazed Donut</h3>
+            <p>House-made donuts with a sweet vanilla glaze. Best paired with espresso.</p>
+            <div class="card-footer">
+              <span class="price">$2.75</span>
+              <button class="add-btn" onclick="addToCart(this, 'Glazed Donut', 2.75)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button onclick="toggleCart()" class="cart-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span>🛒</span>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary full-width" onclick="checkout()">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- CART BUTTON -->
+  <button class="cart-fab" id="cartFab" onclick="toggleCart()">
+    <i class="fas fa-shopping-bag"></i>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- GALLERY / AMBIANCE -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="section-label center">The Vibe</p>
+      <h2 class="section-title center">Our Ambiance</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g1">
+        <div class="gallery-overlay"><p>Morning Ritual</p></div>
+      </div>
+      <div class="gallery-item g2">
+        <div class="gallery-overlay"><p>Latte Art</p></div>
+      </div>
+      <div class="gallery-item g3">
+        <div class="gallery-overlay"><p>Cozy Corner</p></div>
+      </div>
+      <div class="gallery-item g4">
+        <div class="gallery-overlay"><p>Fresh Beans</p></div>
+      </div>
+      <div class="gallery-item g5">
+        <div class="gallery-overlay"><p>Our Baristas</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-label center">Reviews</p>
+      <h2 class="section-title center">What People Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Mokavava is my morning sanctuary. The espresso is the best I've had outside of Italy. The staff remembers my order — that's rare!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SL</div>
+            <div>
+              <strong>Sofia L.</strong>
+              <span>Regular Customer</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured">
+          <div class="stars">★★★★★</div>
+          <p>"The cold brew here is unmatched. Smooth, bold, and never bitter. The ambiance makes you want to stay all afternoon with a good book."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">MR</div>
+            <div>
+              <strong>Marcus R.</strong>
+              <span>Coffee Enthusiast</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Brought my whole team here for a client meeting. Everyone was impressed. The pastries alone are worth the visit!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">JK</div>
+            <div>
+              <strong>Jamie K.</strong>
+              <span>Business Owner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label">Find Us</p>
+          <h2 class="section-title">Come Say Hello</h2>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Main Location</strong>
+              <p>42 Brew Street, Downtown District</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon–Fri: 7am – 9pm<br/>Sat–Sun: 8am – 10pm</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p>+1 (555) 926-2828</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>hello@mokavava.com</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send a Message</h3>
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell us something..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">Send Message</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle"></i>
+            <p>Message sent! We'll get back to you soon ☕</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-icon">☕</span>
+          <span class="logo-text">Mokavava</span>
+          <p>Where every sip tells a story. Crafted with love, served with soul.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Our Menu</h4>
+          <ul>
+            <li><a href="#menu">Hot Drinks</a></li>
+            <li><a href="#menu">Cold Drinks</a></li>
+            <li><a href="#menu">Food & Pastries</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get our latest offers and new arrivals.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Mokavava Coffee House. All rights reserved.</p>
+        <p>Made with ❤️ and too much coffee.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
